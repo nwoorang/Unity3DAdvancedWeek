@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358e2b9fba73de94e843e785b8a31fa9, type: 3}
+  m_Name: EmptyHand1
+  m_EditorClassIdentifier: 
+  itemName: Hand
+  itemDescription: 
+  itemType: 0
+  itemIcon: {fileID: 0}
+  itemPrefab: {fileID: 0}
+  isStackable: 0
+  maxStackAmount: 0
+  equipCameraPrefab: {fileID: 2283054167082143495, guid: 954bbc1ada5ce4d43b34b9b66d45de04, type: 3}
+  playerHandPrefab: {fileID: 3818599956920996789, guid: 59d0efc5ca361264290115a7bbf037da, type: 3}
+  wDamage: 0
+  wGather: 0

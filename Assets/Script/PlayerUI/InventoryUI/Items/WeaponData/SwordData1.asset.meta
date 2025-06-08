@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Data/WeaponData/SwordData1.asset.meta
+guid: dc70a3c0c45aaec4387e41f6920b432f
+========
+guid: 39c6845441d57804cac9abafa4bca75a
+>>>>>>>> Develop:Assets/Scripts/Data/WeaponData/AxData1.asset.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

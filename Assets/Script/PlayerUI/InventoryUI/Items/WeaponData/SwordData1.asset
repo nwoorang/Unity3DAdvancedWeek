@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358e2b9fba73de94e843e785b8a31fa9, type: 3}
+  m_Name: SwordData1
+  m_EditorClassIdentifier: 
+  itemName: Sword
+  itemDescription: "\uC801\uC744 \uBB34\uCC0C\uB97C \uC218 \uC788\uB294 \uAE30\uBCF8\uC801\uC778
+    \uAC80\uC774\uB2E4."
+  itemType: 0
+  itemIcon: {fileID: 21300000, guid: 89ef00a3208163f439887a29a2c1a4a2, type: 3}
+  itemPrefab: {fileID: 0}
+  isStackable: 0
+  maxStackAmount: 0
+  equipCameraPrefab: {fileID: 2798592362232799540, guid: 881fcd1e7cd151c4e97fef1845bab17b, type: 3}
+  playerHandPrefab: {fileID: 144487475529553099, guid: bf68340b65fb5344db696463e57e88a3, type: 3}
+  wDamage: 25
+  wGather: 5
