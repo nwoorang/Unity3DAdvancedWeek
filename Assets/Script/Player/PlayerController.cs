@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // 마우스커서 숨기기
+    //    Cursor.lockState = CursorLockMode.Locked; // 마우스커서 숨기기
         waterMoveSpeed = moveSpeed/2;
         defaultMoveSpeed = moveSpeed;
         sprintSpeed = moveSpeed * 2;
@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
         if(UIManager.Instance.inventoryUI.activeSelf)
         {
-            Cursor.lockState = CursorLockMode.None; // 빌드 UI와 인벤토리 UI가 활성화 상태일 때 커서 잠금 해제
+    //        Cursor.lockState = CursorLockMode.None; // 빌드 UI와 인벤토리 UI가 활성화 상태일 때 커서 잠금 해제
             cameraLock = true;
             uiOn = true;
         }
@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
         if (!UIManager.Instance.inventoryUI.activeSelf)
         {
-            Cursor.lockState = CursorLockMode.Locked; // 빌드 UI와 인벤토리 UI가 비활성화 상태일 때 커서 잠금
+   //         Cursor.lockState = CursorLockMode.Locked; // 빌드 UI와 인벤토리 UI가 비활성화 상태일 때 커서 잠금
             cameraLock = false;
             uiOn = false;
         }
@@ -294,7 +294,7 @@ public class PlayerController : MonoBehaviour
         // 인벤토리 열기/닫기
         UIManager.Instance.playerUI.inventoryUI.ToggleInventory();
 
-        if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None; // 인벤토리 열 때 커서 잠금 해제
+  //      if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None; // 인벤토리 열 때 커서 잠금 해제
         if (AssessCameraLockState() == false) cameraLock = true;
     }
 
@@ -336,9 +336,9 @@ public class PlayerController : MonoBehaviour
 
     public void ToggleCursor()
     {
-        bool isLocked = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = isLocked ? CursorLockMode.None : CursorLockMode.Locked;
-        cameraLock = isLocked;
+     //   bool isLocked = Cursor.lockState == CursorLockMode.Locked;
+     //   Cursor.lockState = isLocked ? CursorLockMode.None : CursorLockMode.Locked;
+    //    cameraLock = isLocked;
     }
 
     public bool AssessCameraLockState()

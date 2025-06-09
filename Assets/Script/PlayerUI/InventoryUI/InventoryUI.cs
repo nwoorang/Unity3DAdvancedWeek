@@ -71,7 +71,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         PlayerMediator.Instance.controller.uiOn = true;
-        PlayerMediator.Instance.controller.ToggleCursor();
+      //  PlayerMediator.Instance.controller.ToggleCursor(); //커서 잠금,열기
     }
 
     public void AddItem(BasicItemData newItemData)

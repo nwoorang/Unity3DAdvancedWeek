@@ -50,6 +50,7 @@ public class SelectedItemUI : MonoSingleton<SelectedItemUI>
 
     public void OnUseItemButton() //아이템 사용
     {
+        
         if (itemSlotData.itemData == null || itemSlotData.ItemQuantity <= 0)
         {
             Debug.LogWarning("사용할 수 있는 아이템이 없습니다.");

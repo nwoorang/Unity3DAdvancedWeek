@@ -17,7 +17,7 @@ MonoBehaviour:
     \uD1B5\uB098\uBB34\uC774\uB2E4. \uAC74\uCD95 \uC7AC\uB8CC\uB85C \uC4F0\uC778\uB2E4."
   itemType: 2
   itemIcon: {fileID: 21300000, guid: 8c93c57a0b867384d8db9dae3cd194c5, type: 3}
-  itemPrefab: {fileID: 2297698167925052201, guid: 1bcac4cb4cad3534fa923ccc48124059, type: 3}
+  itemPrefab: {fileID: 0}
   isStackable: 1
   maxStackAmount: 20
   resources: []
