@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     // ========================== //
     //     [Inspector Window]
@@ -18,10 +18,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public Transform originalParent;
     #endregion
 
+    public float doubleClickThreshold = 0.3f;  // 더블클릭 허용 시간
+    private float lastClickTime = -1f;
 
-    // =========================== //
-    //     [Unity LifeCycle]
-    // =========================== //
+    public StatusUI statusUI;
+
     #region [Unity LifeCycle]
     private void OnEnable()
     {
@@ -58,6 +59,36 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (!transform.parent.CompareTag("ItemSlot") && !transform.parent.CompareTag("PlayerUI")) transform.SetParent(originalParent);
         transform.SetAsFirstSibling();
         iconImage.raycastTarget = true;
+    }
+    
+     public void OnPointerClick(PointerEventData eventData)
+    {
+        // 클릭 대상 확인 (굳이 이미지 오브젝트에만 적용하고 싶다면)
+        if (eventData.button != PointerEventData.InputButton.Left)
+            return;
+
+        if (Time.time - lastClickTime < doubleClickThreshold)
+        {
+            // 더블클릭 감지
+            Debug.Log("더블클릭!");
+            OnDoubleClick();
+        }
+
+        lastClickTime = Time.time;
+    }
+
+    void OnDoubleClick()
+    {
+        // 여기에 원하는 함수 호출
+        Debug.Log("더블클릭 함수 실행");
+                ItemType itemType = itemSlotData.itemData.itemType;
+        if (itemType == ItemType.Equipable)
+        {
+            if (itemSlotData.itemData is EquipableItem equipableItem)
+            {
+              statusUI.ATK.text=  equipableItem.wDamage.ToString();
+            }
+        }
     }
     #endregion
 }
