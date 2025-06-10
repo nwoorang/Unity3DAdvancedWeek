@@ -20,7 +20,13 @@ MonoBehaviour:
   itemPrefab: {fileID: 0}
   isStackable: 0
   maxStackAmount: 0
-  equipCameraPrefab: {fileID: 1107039161528911581, guid: 6bda84deb4c3e8d498e045846b44439f, type: 3}
-  playerHandPrefab: {fileID: 8631254772155780693, guid: 93eb7c0bc60b6a64884a8f825e4ce109, type: 3}
-  wDamage: 10
+  equipCameraPrefab: {fileID: 1107039161528911581, guid: 6bda84deb4c3e8d498e045846b44439f,
+    type: 3}
+  playerHandPrefab: {fileID: 8631254772155780693, guid: 93eb7c0bc60b6a64884a8f825e4ce109,
+    type: 3}
+  equipableType: 0
+  wDamage: 1000
   wGather: 25
+  wDefense: 0
+  wHP: 0
+  wCrit: 0

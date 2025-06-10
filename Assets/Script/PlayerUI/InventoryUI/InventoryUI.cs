@@ -163,8 +163,6 @@ public class InventoryUI : MonoBehaviour
     {
         /// • (Completed) InventoryInit : 인벤토리 UI 초기화
 
-        // 인벤토리 비활성화 상태로 시작
-        inventoryUI.SetActive(false);
 
         // 각 슬롯에 있는 ItemSlotData를 가져와 ItemSlotDatas 배열에 저장
         itemSlotDatas = new ItemSlotData[slotPanel.childCount];

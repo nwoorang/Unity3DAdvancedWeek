@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using System.Numerics;
 public class StatusUI : MonoBehaviour
 {
     int BaseAtk = 10;
@@ -25,6 +25,10 @@ public class StatusUI : MonoBehaviour
     public TextMeshProUGUI AddHP;
     public TextMeshProUGUI AddCRIT;
 
+ BigInteger result1;
+  BigInteger result2;
+   BigInteger result3;
+    BigInteger result4;
     public TextMeshProUGUI SumATK;
     public TextMeshProUGUI SumDEF;
     public TextMeshProUGUI SumHP;
@@ -35,6 +39,11 @@ public class StatusUI : MonoBehaviour
         DEF.text = BaseDEF.ToString();
         HP.text = BaseHP.ToString();
         CRIT.text = BaseCrit.ToString();
+        result1 = new BigInteger();
+        result2 = new BigInteger();
+        result3 = new BigInteger();
+        result4 = new BigInteger();
+                
     }
     public void ChangeStat(int wDamage, int wDefense, int wHP, int wCrit)
     {
@@ -50,6 +59,8 @@ public class StatusUI : MonoBehaviour
         SumDEF.text = (BaseDEF + IntAddDEF).ToString();
         SumHP.text = (BaseHP + IntAddHP).ToString();
         SumCRIT.text = (BaseCrit + IntAddCRIT).ToString();
+
+
                                 
     }
 }
