@@ -26,4 +26,6 @@ public class EquipableItem : BasicItemData
     public int wGather;
 
     public int wDefense;
+    public int wHP;
+    public int wCrit;
 }

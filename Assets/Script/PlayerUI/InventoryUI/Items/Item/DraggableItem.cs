@@ -84,9 +84,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 ItemType itemType = itemSlotData.itemData.itemType;
         if (itemType == ItemType.Equipable)
         {
-            if (itemSlotData.itemData is EquipableItem equipableItem)
+            if (itemSlotData.itemData is EquipableItem equipableItem)//형변환
             {
-              statusUI.ATK.text=  equipableItem.wDamage.ToString();
+                statusUI.ChangeStat(
+                    equipableItem.wDamage,
+                    equipableItem.wDefense,
+                    equipableItem.wHP,
+                    equipableItem.wCrit
+                );                  
             }
         }
     }

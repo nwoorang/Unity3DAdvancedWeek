@@ -5,9 +5,51 @@ using UnityEngine;
 
 public class StatusUI : MonoBehaviour
 {
+    int BaseAtk = 10;
+    int BaseDEF = 5;
+    int BaseHP = 100;
+    int BaseCrit = 25;
     //장비착용을 하면 여기를 불러서 갱신
     public TextMeshProUGUI ATK;
     public TextMeshProUGUI DEF;
     public TextMeshProUGUI HP;
     public TextMeshProUGUI CRIT;
+
+    int IntAddATK=0;
+    int IntAddDEF = 0;
+    int IntAddHP = 0;
+    int IntAddCRIT = 0;
+
+    public TextMeshProUGUI AddATK;
+    public TextMeshProUGUI AddDEF;
+    public TextMeshProUGUI AddHP;
+    public TextMeshProUGUI AddCRIT;
+
+    public TextMeshProUGUI SumATK;
+    public TextMeshProUGUI SumDEF;
+    public TextMeshProUGUI SumHP;
+    public TextMeshProUGUI SumCRIT;
+    void Start()
+    {
+        ATK.text = BaseAtk.ToString();
+        DEF.text = BaseDEF.ToString();
+        HP.text = BaseHP.ToString();
+        CRIT.text = BaseCrit.ToString();
+    }
+    public void ChangeStat(int wDamage, int wDefense, int wHP, int wCrit)
+    {
+        IntAddATK += wDamage;
+        IntAddDEF += wDefense;
+        IntAddHP += wHP;
+        IntAddCRIT += wCrit;
+        AddATK.text = IntAddATK.ToString();
+        AddDEF.text = IntAddDEF.ToString();
+        AddHP.text = IntAddHP.ToString();
+        AddCRIT.text = IntAddCRIT.ToString();
+        SumATK.text = (BaseAtk + IntAddATK).ToString();
+        SumDEF.text = (BaseDEF + IntAddDEF).ToString();
+        SumHP.text = (BaseHP + IntAddHP).ToString();
+        SumCRIT.text = (BaseCrit + IntAddCRIT).ToString();
+                                
+    }
 }
