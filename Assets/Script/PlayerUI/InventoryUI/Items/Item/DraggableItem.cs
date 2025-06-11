@@ -22,6 +22,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private float lastClickTime = -1f;
 
     public StatusUI statusUI;
+    public EquipmentUI equipmentUI;
+
+    public GameObject E;
 
     #region [Unity LifeCycle]
     private void OnEnable()
@@ -60,8 +63,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetAsFirstSibling();
         iconImage.raycastTarget = true;
     }
-    
-     public void OnPointerClick(PointerEventData eventData)
+
+    public void OnPointerClick(PointerEventData eventData)
     {
         // 클릭 대상 확인 (굳이 이미지 오브젝트에만 적용하고 싶다면)
         if (eventData.button != PointerEventData.InputButton.Left)
@@ -81,17 +84,33 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         // 여기에 원하는 함수 호출
         Debug.Log("더블클릭 함수 실행");
-                ItemType itemType = itemSlotData.itemData.itemType;
+        ItemType itemType = itemSlotData.itemData.itemType;
         if (itemType == ItemType.Equipable)
         {
             if (itemSlotData.itemData is EquipableItem equipableItem)//형변환
             {
+
+                if (equipableItem.equipableType == EquipableType.Weapon)
+                {
+                    if (equipmentUI.WeaponItemSlotData == equipableItem)//같은장비를 클릭한거라면 해제
+                    {
+                        equipmentUI.WeaponItemSlotData = null;
+                        E.SetActive(false);
+                    }
+                    else
+                    {
+                        equipmentUI.WeaponItemSlotData = equipableItem;//다른장비거나 없다면 장착
+                        E.SetActive(true);
+                    }
+                }
+
+
                 statusUI.ChangeStat(
                     equipableItem.wDamage,
                     equipableItem.wDefense,
                     equipableItem.wHP,
                     equipableItem.wCrit
-                );                  
+                );
             }
         }
     }
