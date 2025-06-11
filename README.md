@@ -86,6 +86,7 @@ Inventory UI 열기/닫기	Input System을 통해 UI를 실시간 토글
 ```
 
 📦 아이템 데이터 구조
+```bash
 클래스명	설명
 ItemData	ScriptableObject 기반의 아이템 정보 클래스 (이름, 아이콘, 설명 등 포함)
 ItemType	아이템 분류를 위한 Enum (장비, 소비, 퀘스트 등)
@@ -101,16 +102,22 @@ public class ItemData : ScriptableObject {
     public string description;
     public ItemType itemType;
 }
+```
 🖱 UI 인터랙션 처리 방식
+```bash
+
 드래그 앤 드롭
 마우스 이벤트를 통해 슬롯 간 아이템을 이동하며, 빈 슬롯 처리 및 아이템 스왑을 포함
 
 UI 상태 관리
 UI 오픈 상태에 따라 커서 락 해제 및 플레이어 조작 비활성화 등 상태를 연동 처리
-
+```
 🧩 트러블 슈팅
+```bash
+
 ❌ 문제 1: 드래그 중 아이템 정보 손실
 드래그 시 ItemData가 아닌 GameObject를 이동시키는 방식으로 구현하여, 슬롯 간 정보 전달이 불안정했음
 
 ✅ 해결 방법:
 드래그 시 ItemData 참조를 별도 저장하여, 슬롯 교환이 아닌 데이터 교환 방식으로 처리
+```
