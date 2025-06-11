@@ -104,6 +104,20 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     }
                 }
 
+                                if (equipableItem.equipableType == EquipableType.Armor)
+                {
+                    if (equipmentUI.ArmorItemSlotData == equipableItem)//같은장비를 클릭한거라면 해제
+                    {
+                        equipmentUI.ArmorItemSlotData = null;
+                        E.SetActive(false);
+                    }
+                    else
+                    {
+                        equipmentUI.ArmorItemSlotData = equipableItem;//다른장비거나 없다면 장착
+                        E.SetActive(true);
+                    }
+                }
+
 
                 statusUI.ChangeStat(
                     equipableItem.wDamage,
