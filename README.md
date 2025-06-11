@@ -74,9 +74,9 @@ InventorySystem
 └── Input/
     └── InputActions.inputactions
 ```
-
+## 🧠 핵심 기능 설명
 ```bash
-##🧠 핵심 기능 설명
+
 기능명	설명
 아이템 획득 / 제거	게임 내 상황에 따라 동적으로 아이템 추가/삭제 가능
 Inventory UI 열기/닫기	Input System을 통해 UI를 실시간 토글
